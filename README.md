@@ -12,7 +12,7 @@ The DeepLiiF dataset that support the findings of this study are openly availabl
 ├── CDF/                 # Color abnormality map extraction.
 │   └── gen_dataset_txt.py
 ├── train.py             	# Training script
-└── README.md             	# 项目说明文件
+└── README.md             	
 
 ```
 
