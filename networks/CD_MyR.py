@@ -118,9 +118,9 @@ class IRMLP(nn.Module):
 
         return out
 
-class CD_MyResNet18(nn.Module):
+class CD_MyR(nn.Module):
     def __init__(self, block, resnet18_model, num_classes, **kwargs):
-        super(CD_MyResNet18, self).__init__()
+        super(CD_MyR, self).__init__()
         # self.relu = nn.ReLU(inplace=False)
         # print("fix-resnet18_model\n", resnet18_model)
         self.relu = nn.ReLU(inplace=False)

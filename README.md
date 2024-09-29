@@ -1,16 +1,15 @@
 ## Introduction
-1.2本工作强调了通过颜色反卷积整合先验知识以推进胶质瘤诊断和预后评估的潜力。模型利用颜色反卷积提取颜色异常图，引导网络聚焦于正染色区域。模型增强了特征提取能力，提高了分类精度和可解释性。实验结果表明，与基线模型相比，CD34数据集的精度、召回率和f1得分分别提高了9.17%、9.35%和12.35%。
-
+Immunohistochemistry (IHC) plays a crucial role in pathological evaluation, providing accurate assessments and personalized treatment plans. CD34-stained images are used to identify tumor vascular endothelial cells. Different tumors exhibit various CD34 expression patterns, making accurate analysis of these stained regions critical for diagnosis. This study proposes a novel color deconvolution-aware prior-guided model for automating the analysis of CD34-stained glioma IHC images. The model utilizes color deconvolution to extract color abnormality maps, guiding the network to focus on positively stained regions. This method enhances feature extraction capabilities, improving classification accuracy and interpretability. Experimental results show that, compared to baseline models, Precision, Recall, and F1-score on the CD34 dataset were improved by 9.17%, 9.35%, and 12.35%, respectively. Our work emphasizes the potential of integrating prior knowledge through color deconvolution to advance glioma diagnosis and prognosis evaluation.
 ## Project Structure
 
 ```
-├── datasets/                 # 数据集文件夹
-├── networks/                 # 模型文件夹
+├── datasets/                 # Dataset folder
+├── networks/                 # Model folder
 │   ├── DIYResNet18        
 │   ├── CD_MyResNet18      
-├── utils/
+├── CDF/                 # Color abnormality map extraction.
 │   └── gen_dataset_txt.py
-├── train.py             	# 训练脚本
+├── train.py             	# Training script
 └── README.md             	# 项目说明文件
 
 ```

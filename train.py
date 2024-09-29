@@ -1,5 +1,5 @@
-from networks import DIYResNet18
-from networks import CD_MyResNet18
+from networks import DIYR
+from networks import CD_MyR
 import torch.nn as nn
 import argparse
 
@@ -41,13 +41,12 @@ class BasicBlock(nn.Module):
 
         return out
 
-def ResNet18_Port(dataset, mode, block, num_classes, **kwargs):
-    # resnet18_model = models.resnet18(weights=None)
-    resnet18_model = DIYResNet18('resnet18', block=block)
+def RePort(dataset, mode, block, num_classes, **kwargs):
+    resnet18_model = DIYR('resnet18', block=block)
     conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=1, padding=3, bias=False)
     resnet18_model.encoder[0] = conv1
     resnet18_model.encoder[8] = nn.Sequential()
-    final_model = CD_MyResNet18(BasicBlock, resnet18_model, num_classes, **kwargs)
+    final_model = CD_MyR(BasicBlock, resnet18_model, num_classes, **kwargs)
     print("final_model\n", final_model)
 
 
@@ -67,4 +66,4 @@ if __name__ == '__main__':
                              'SEBasicBlock_LeakyReLU | BasicBlock_GELU')
     args = parser.parse_args()
 
-    model = ResNet18_Port(dataset=args.dataset, mode=args.TrainChoise, block=args.BlockChoise,num_classes=args.num_classes)
+    model = RePort(dataset=args.dataset, mode=args.TrainChoise, block=args.BlockChoise,num_classes=args.num_classes)

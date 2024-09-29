@@ -2,9 +2,9 @@ import torchvision.models as models
 import torch
 from torch import nn
 
-class DIYResNet18(torch.nn.Module):
+class DIYR(torch.nn.Module):
     def __init__(self, model, block):
-        super(DIYResNet18, self).__init__()
+        super(DIYR, self).__init__()
         print("block:", block)
         if model == 'resnet18':
             if block == 'BasicBlock':
