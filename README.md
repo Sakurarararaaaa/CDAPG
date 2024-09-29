@@ -5,8 +5,8 @@ Immunohistochemistry (IHC) plays a crucial role in pathological evaluation, prov
 ```
 ├── datasets/                 # Dataset folder
 ├── networks/                 # Model folder
-│   ├── DIYResNet18        
-│   ├── CD_MyResNet18      
+│   ├── DIYR    
+│   ├── CD_MyR    
 ├── CDF/                 # Color abnormality map extraction.
 │   └── gen_dataset_txt.py
 ├── train.py             	# Training script
